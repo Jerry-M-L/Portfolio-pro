@@ -2,13 +2,12 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { ArrowDown, Github, Linkedin, Mail } from 'lucide-react';
 import { Button } from './ui/button';
-import { toast } from './ui/use-toast';
+import profil from '../assets/profil.png';
 const Hero = () => {
-  const handleSocialClick = platform => {
-    toast({
-      title: "🚧 Cette fonctionnalité n'est pas encore implémentée",
-      description: "Mais ne t'inquiète pas ! Je travaille encore dessus ! 🚀"
-    });
+  const socialLinks = {
+    GitHub: 'https://github.com/your-username',
+    LinkedIn: 'https://www.linkedin.com/in/your-username',
+    Email: 'mailto:your-email@example.com'
   };
   const scrollToAbout = () => {
     const element = document.getElementById('about');
@@ -16,7 +15,7 @@ const Hero = () => {
       element.scrollIntoView({
         behavior: 'smooth'
       });
-    }c
+    }
   };
   return <section id="hero" className="min-h-screen flex items-center justify-center relative overflow-hidden pt-20">
       {/* Background Effects */}
@@ -47,7 +46,7 @@ const Hero = () => {
         }} className="mx-auto w-48 h-48 relative">
             <div className="absolute inset-0 bg-gradient-to-r from-purple-400 to-pink-400 rounded-full animate-spin-slow"></div>
             <div className="absolute inset-2  rounded-full flex items-center justify-center">
-              <img alt="Photo de profil du développeur" className="w-full h-full rounded-full object-cover" src="/src/assets/profil.png" />
+              <img alt="Photo de profil du développeur" className="w-full h-full rounded-full object-cover" src={profil} />
             </div>
           </motion.div>
 
@@ -101,14 +100,18 @@ const Hero = () => {
             }, {
               icon: Mail,
               label: 'Email'
-            }].map((social, index) => <motion.button key={social.label} whileHover={{
+            }].map((social) => {
+            const href = socialLinks[social.label];
+            const isMailto = href && href.startsWith('mailto:');
+            return <motion.a key={social.label} whileHover={{
               scale: 1.2,
               rotate: 5
             }} whileTap={{
               scale: 0.9
-            }} onClick={() => handleSocialClick(social.label)} className="p-4 bg-gradient-to-r from-purple-500/20 to-pink-500/20 backdrop-blur-sm border border-purple-500/30 rounded-full hover:from-purple-500/30 hover:to-pink-500/30 transition-all duration-300">
+            }} href={href} target={isMailto ? undefined : "_blank"} rel={isMailto ? undefined : "noopener noreferrer"} className="p-4 bg-gradient-to-r from-purple-500/20 to-pink-500/20 backdrop-blur-sm border border-purple-500/30 rounded-full hover:from-purple-500/30 hover:to-pink-500/30 transition-all duration-300">
                   <social.icon size={24} className="text-white" />
-                </motion.button>)}
+                </motion.a>;
+          })}
             </motion.div>
 
             {/* CTA Button */}

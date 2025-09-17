@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Code, Lightbulb, Users, Zap } from 'lucide-react';
+import poste from '../assets/poste.png';
 const About = () => {
   const features = [{
     icon: Code,
@@ -57,7 +58,7 @@ const About = () => {
         }} className="relative">
             <div className="relative">
               <div className="absolute inset-0 bg-gradient-to-r from-purple-500/20 to-pink-500/20 rounded-2xl transform rotate-3"></div>
-              <img alt="Développeur travaillant sur son ordinateur" className="relative w-full h-96 object-cover rounded-2xl shadow-2xl" src="/src/assets/poste.png" />
+              <img alt="Développeur travaillant sur son ordinateur" className="relative w-full h-96 object-cover rounded-2xl shadow-2xl" src={poste} />
             </div>
           </motion.div>
 

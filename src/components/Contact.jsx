@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Mail, Phone, MapPin, Send, Github, Linkedin, Twitter, Link, Facebook } from 'lucide-react';
 import { Button } from './ui/button';
-import { toast } from './ui/use-toast';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -21,17 +20,14 @@ const Contact = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    toast({
-      title: "🚧 Cette fonctionnalité n'est pas encore implémentée",
-      description: "Mais ne t'inquiète pas !  Je travaille encore dessus  ! 🚀"
-    });
+    const mailto = `mailto:jerrymbendaleca@gmail.com?subject=${encodeURIComponent(formData.subject)}&body=${encodeURIComponent(`Nom: ${formData.name}\nEmail: ${formData.email}\n\n${formData.message}`)}`;
+    window.location.href = mailto;
   };
 
-  const handleSocialClick = (platform) => {
-    toast({
-      title: "🚧 Cette fonctionnalité n'est pas encore implémentée",
-      description: "Mais ne t'inquiète pas ! Je travaille encore dessus ! 🚀"
-    });
+  const socialLinksMap = {
+    GitHub: 'https://github.com/your-username',
+    LinkedIn: 'https://www.linkedin.com/in/your-username',
+    Facebook: 'https://facebook.com/your-username'
   };
 
   const contactInfo = [
@@ -205,17 +201,22 @@ const Contact = () => {
             >
               <h3 className="text-2xl font-bold text-white mb-6">Suivez-moi</h3>
               <div className="flex space-x-4">
-                {socialLinks.map((social) => (
-                  <motion.button
-                    key={social.label}
-                    whileHover={{ scale: 1.1, rotate: 5 }}
-                    whileTap={{ scale: 0.9 }}
-                    onClick={() => handleSocialClick(social.label)}
-                    className={`p-4 bg-gradient-to-r from-slate-700/50 to-slate-600/50 border border-slate-600/50 rounded-xl text-gray-400 ${social.color} transition-all duration-300 hover:border-purple-500/30`}
-                  >
-                    <social.icon size={24} />
-                  </motion.button>
-                ))}
+                {socialLinks.map((social) => {
+                  const href = socialLinksMap[social.label];
+                  return (
+                    <motion.a
+                      key={social.label}
+                      whileHover={{ scale: 1.1, rotate: 5 }}
+                      whileTap={{ scale: 0.9 }}
+                      href={href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className={`p-4 bg-gradient-to-r from-slate-700/50 to-slate-600/50 border border-slate-600/50 rounded-xl text-gray-400 ${social.color} transition-all duration-300 hover:border-purple-500/30`}
+                    >
+                      <social.icon size={24} />
+                    </motion.a>
+                  );
+                })}
               </div>
               <p className="text-gray-400 text-sm mt-4">
                 Connectons-nous sur les réseaux sociaux pour échanger sur nos projets et passions communes.

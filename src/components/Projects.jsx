@@ -2,21 +2,22 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { ExternalLink, Github, Eye } from 'lucide-react';
 import { Button } from './ui/button';
-import { toast } from './ui/use-toast';
+import portfolioImg from '../assets/portfolio.png';
+import poste from '../assets/poste.png';
 
 const Projects = () => {
-  const handleProjectAction = (action, projectName) => {
-    toast({
-      title: "🚧 Cette fonctionnalité n'est pas encore implémentée",
-      description: "Mais ne t'inquiète pas ! Je travaille encore dessus ! 🚀"
-    });
+  const handleProjectAction = (action, projectName, url) => {
+    if (!url) return;
+    window.open(url, '_blank', 'noopener,noreferrer');
   };
 
   const projects = [
     {
       title: 'E-Commerce Platform',
       description: 'Plateforme e-commerce complète avec panier, paiements et gestion des commandes. Interface moderne et responsive.',
-      image: '/src/assets/poste.png',
+      image: poste,
+      demoUrl: 'https://your-demo-url.example.com',
+      codeUrl: 'https://github.com/your-username/ecommerce-platform',
       technologies: ['React', 'Node.js', 'PostgreSQL', 'Stripe'],
       category: 'Full Stack'
       
@@ -25,6 +26,8 @@ const Projects = () => {
       title: 'Task Management App',
       description: 'Application de gestion de tâches collaborative avec notifications en temps réel et tableaux Kanban.',
       image: 'https://images.unsplash.com/photo-1556157382-97eda2d62296?q=80&w=1200&auto=format&fit=crop',
+      demoUrl: 'https://your-demo-url.example.com',
+      codeUrl: 'https://github.com/your-username/task-management-app',
       technologies: ['Vue.js', 'Express', 'Socket.io', 'MongoDB'],
       category: 'Frontend'
     },
@@ -32,6 +35,8 @@ const Projects = () => {
       title: 'Analytics Dashboard',
       description: 'Tableau de bord analytique avec graphiques interactifs et rapports personnalisables pour entreprises.',
       image: 'https://images.unsplash.com/photo-1543286386-2e659306cd6c?q=80&w=1200&auto=format&fit=crop',
+      demoUrl: 'https://your-demo-url.example.com',
+      codeUrl: 'https://github.com/your-username/analytics-dashboard',
       technologies: ['React', 'D3.js', 'Python', 'FastAPI'],
       category: 'Data Viz'
     },
@@ -39,13 +44,17 @@ const Projects = () => {
       title: 'Social Media App',
       description: 'Réseau social avec messagerie instantanée, partage de contenu et système de recommandations.',
       image: 'https://images.unsplash.com/photo-1516542076529-1ea3854896e1?q=80&w=1200&auto=format&fit=crop',
+      demoUrl: 'https://your-demo-url.example.com',
+      codeUrl: 'https://github.com/your-username/social-media-app',
       technologies: ['Next.js', 'GraphQL', 'Prisma', 'AWS'],
       category: 'Full Stack'
     },
     {
       title: 'Portfolio Website',
       description: 'Site portfolio responsive avec animations fluides et optimisation SEO pour un developpeur .',
-      image: '/src/assets/portfolio.png',
+      image: portfolioImg,
+      demoUrl: 'https://your-demo-url.example.com',
+      codeUrl: 'https://github.com/your-username/portfolio',
       technologies: ['Next.js', 'Tailwind', 'React'],
       category: 'Frontend'
     },
@@ -123,20 +132,24 @@ const Projects = () => {
                 <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                   <div className="flex space-x-4">
                     <Button
+                      asChild
                       size="sm"
-                      onClick={() => handleProjectAction('demo', project.title)}
                       className="bg-white/20 backdrop-blur-sm hover:bg-white/30 text-white border border-white/30"
                     >
+                      <a href={project.demoUrl} target="_blank" rel="noopener noreferrer">
                       <Eye size={16} className="mr-2" />
                       Demo
+                      </a>
                     </Button>
                     <Button
+                      asChild
                       size="sm"
-                      onClick={() => handleProjectAction('code', project.title)}
                       className="bg-white/20 backdrop-blur-sm hover:bg-white/30 text-white border border-white/30"
                     >
+                      <a href={project.codeUrl} target="_blank" rel="noopener noreferrer">
                       <Github size={16} className="mr-2" />
                       Code
+                      </a>
                     </Button>
                   </div>
                 </div>
@@ -172,21 +185,25 @@ const Projects = () => {
                 {/* Action Buttons */}
                 <div className="flex space-x-3 pt-2">
                   <Button
+                    asChild
                     variant="outline"
                     size="sm"
-                    onClick={() => handleProjectAction('demo', project.title)}
                     className="flex-1 border-purple-500/30 text-purple-400 hover:bg-purple-500/10"
                   >
+                    <a href={project.demoUrl} target="_blank" rel="noopener noreferrer">
                     <ExternalLink size={16} className="mr-2" />
                     Voir le projet
+                    </a>
                   </Button>
                   <Button
+                    asChild
                     variant="ghost"
                     size="sm"
-                    onClick={() => handleProjectAction('code', project.title)}
                     className="text-gray-400 hover:text-white hover:bg-slate-700/50"
                   >
+                    <a href={project.codeUrl} target="_blank" rel="noopener noreferrer">
                     <Github size={16} />
+                    </a>
                   </Button>
                 </div>
               </div>
