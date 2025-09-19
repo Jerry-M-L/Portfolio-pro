@@ -29,7 +29,7 @@ const Contact = () => {
   const socialLinksMap = {
     GitHub: 'https://github.com/Jerry-M-L',
     LinkedIn: 'https://www.linkedin.com/in/jerry-mbenda-leca',
-    Facebook: 'https://facebook.com/JerryML'
+    Facebook: 'https://facebook.com/Jerry ML'
   };
 
   const contactInfo = [
