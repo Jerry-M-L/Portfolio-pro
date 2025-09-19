@@ -16,13 +16,10 @@ const About = () => {
             <h3 className="text-2xl font-semibold text-white mb-6">Mon parcours</h3>
             <p className="text-gray-300 mb-4">
               Passionné par le développement web depuis plusieurs années, j'ai acquis une solide expérience 
-              dans les technologies modernes du web. Mon objectif est de créer des applications perantes 
+              dans les technologies modernes du web. Mon objectif est de créer des applications opérantes 
               et des expériences utilisateur exceptionnelles.
             </p>
-            <p className="text-gray-300">
-              Je me spécialise dans React, Node.js, et les technologies cloud, avec une approche 
-              centrée sur la qualité du code et les bonnes pratiques de développement.
-            </p>
+           
           </div>
           
           <div className="bg-white/10 backdrop-blur-sm rounded-lg p-8">
@@ -41,10 +38,12 @@ const About = () => {
                 Collaboration efficace
               </li>
               <li className="flex items-center text-gray-300">
-                <span className="w-2 h-2 bg-purple-500 rounded-full mr-3"></span>
+              <span className="w-2 h-2 bg-purple-500 rounded-full mr-3"></span>
                 Innovation et créativité
               </li>
             </ul>
+          </div>
+          <div>
           </div>
         </div>
       </div>

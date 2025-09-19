@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { ExternalLink, Github, Eye } from 'lucide-react';
+import { ExternalLink, Github, Eye, Clock, CheckCircle, AlertCircle } from 'lucide-react';
 import { Button } from './ui/button';
 import portfolioImg from '../assets/portfolio.png';
 import poste from '../assets/poste.png';
@@ -13,13 +13,25 @@ const Projects = () => {
 
   const projects = [
     {
+      title: 'Portfolio Website',
+      description: 'Site portfolio responsive avec animations fluides et optimisation SEO pour un developpeur .',
+      image: portfolioImg,
+      demoUrl: 'https://portfolio-mlj.vercel.app/',
+      codeUrl: 'https://github.com/Jerry-M-L/portfolio-mlj',
+      technologies: ['Next.js', 'Tailwind', 'React'],
+      category: 'Frontend',
+      status: 'termine'
+    },
+   
+    {
       title: 'E-Commerce Platform',
       description: 'Plateforme e-commerce complète avec panier, paiements et gestion des commandes. Interface moderne et responsive.',
       image: poste,
       demoUrl: 'https://your-demo-url.example.com',
       codeUrl: 'https://github.com/your-username/ecommerce-platform',
       technologies: ['React', 'Node.js', 'PostgreSQL', 'Stripe'],
-      category: 'Full Stack'
+      category: 'Full Stack',
+      status: 'en-cours'
       
     },
     {
@@ -29,39 +41,47 @@ const Projects = () => {
       demoUrl: 'https://your-demo-url.example.com',
       codeUrl: 'https://github.com/your-username/task-management-app',
       technologies: ['Vue.js', 'Express', 'Socket.io', 'MongoDB'],
-      category: 'Frontend'
+      category: 'Frontend',
+      status: 'planification'
     },
-    {
-      title: 'Analytics Dashboard',
-      description: 'Tableau de bord analytique avec graphiques interactifs et rapports personnalisables pour entreprises.',
-      image: 'https://images.unsplash.com/photo-1543286386-2e659306cd6c?q=80&w=1200&auto=format&fit=crop',
-      demoUrl: 'https://your-demo-url.example.com',
-      codeUrl: 'https://github.com/your-username/analytics-dashboard',
-      technologies: ['React', 'D3.js', 'Python', 'FastAPI'],
-      category: 'Data Viz'
-    },
-    {
-      title: 'Social Media App',
-      description: 'Réseau social avec messagerie instantanée, partage de contenu et système de recommandations.',
-      image: 'https://images.unsplash.com/photo-1516542076529-1ea3854896e1?q=80&w=1200&auto=format&fit=crop',
-      demoUrl: 'https://your-demo-url.example.com',
-      codeUrl: 'https://github.com/your-username/social-media-app',
-      technologies: ['Next.js', 'GraphQL', 'Prisma', 'AWS'],
-      category: 'Full Stack'
-    },
-    {
-      title: 'Portfolio Website',
-      description: 'Site portfolio responsive avec animations fluides et optimisation SEO pour un developpeur .',
-      image: portfolioImg,
-      demoUrl: 'https://your-demo-url.example.com',
-      codeUrl: 'https://github.com/your-username/portfolio',
-      technologies: ['Next.js', 'Tailwind', 'React'],
-      category: 'Frontend'
-    },
-   
+
+    
   ];
 
-  const categories = ['Tous', 'Full Stack', 'Frontend', 'Backend', 'Data Viz'];
+  const getStatusConfig = (status) => {
+    switch (status) {
+      case 'termine':
+        return {
+          label: 'Terminé',
+          icon: CheckCircle,
+          className: 'bg-green-500/20 text-green-400 border-green-500/30',
+          iconColor: 'text-green-400'
+        };
+      case 'en-cours':
+        return {
+          label: 'En cours',
+          icon: Clock,
+          className: 'bg-yellow-500/20 text-yellow-400 border-yellow-500/30',
+          iconColor: 'text-yellow-400'
+        };
+      case 'planification':
+        return {
+          label: 'En planification',
+          icon: AlertCircle,
+          className: 'bg-blue-500/20 text-blue-400 border-blue-500/30',
+          iconColor: 'text-blue-400'
+        };
+      default:
+        return {
+          label: 'Inconnu',
+          icon: AlertCircle,
+          className: 'bg-gray-500/20 text-gray-400 border-gray-500/30',
+          iconColor: 'text-gray-400'
+        };
+    }
+  };
+
+  const categories = ['Tous', 'Full Stack', 'Frontend', 'Backend'];
   const [activeCategory, setActiveCategory] = React.useState('Tous');
 
   const filteredProjects = activeCategory === 'Tous' 
@@ -128,31 +148,33 @@ const Projects = () => {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 
-                {/* Overlay Actions */}
-                <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <div className="flex space-x-4">
-                    <Button
-                      asChild
-                      size="sm"
-                      className="bg-white/20 backdrop-blur-sm hover:bg-white/30 text-white border border-white/30"
-                    >
-                      <a href={project.demoUrl} target="_blank" rel="noopener noreferrer">
-                      <Eye size={16} className="mr-2" />
-                      Demo
-                      </a>
-                    </Button>
-                    <Button
-                      asChild
-                      size="sm"
-                      className="bg-white/20 backdrop-blur-sm hover:bg-white/30 text-white border border-white/30"
-                    >
-                      <a href={project.codeUrl} target="_blank" rel="noopener noreferrer">
-                      <Github size={16} className="mr-2" />
-                      Code
-                      </a>
-                    </Button>
+                {/* Overlay Actions - Only show for completed projects */}
+                {project.status === 'termine' && (
+                  <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <div className="flex space-x-4">
+                      <Button
+                        asChild
+                        size="sm"
+                        className="bg-white/20 backdrop-blur-sm hover:bg-white/30 text-white border border-white/30"
+                      >
+                        <a href={project.demoUrl} target="_blank" rel="noopener noreferrer">
+                        <Eye size={16} className="mr-2" />
+                        Demo
+                        </a>
+                      </Button>
+                      <Button
+                        asChild
+                        size="sm"
+                        className="bg-white/20 backdrop-blur-sm hover:bg-white/30 text-white border border-white/30"
+                      >
+                        <a href={project.codeUrl} target="_blank" rel="noopener noreferrer">
+                        <Github size={16} className="mr-2" />
+                        Code
+                        </a>
+                      </Button>
+                    </div>
                   </div>
-                </div>
+                )}
               </div>
 
               {/* Project Content */}
@@ -161,9 +183,21 @@ const Projects = () => {
                   <h3 className="text-xl font-bold text-white group-hover:text-purple-400 transition-colors duration-300">
                     {project.title}
                   </h3>
-                  <span className="px-3 py-1 bg-gradient-to-r from-purple-500/20 to-pink-500/20 text-purple-300 text-sm rounded-full border border-purple-500/30">
-                    {project.category}
-                  </span>
+                  <div className="flex flex-col gap-2 items-end">
+                    <span className="px-3 py-1 bg-gradient-to-r from-purple-500/20 to-pink-500/20 text-purple-300 text-sm rounded-full border border-purple-500/30">
+                      {project.category}
+                    </span>
+                    {(() => {
+                      const statusConfig = getStatusConfig(project.status);
+                      const StatusIcon = statusConfig.icon;
+                      return (
+                        <span className={`px-3 py-1 text-xs rounded-full border flex items-center gap-1 ${statusConfig.className}`}>
+                          <StatusIcon size={12} className={statusConfig.iconColor} />
+                          {statusConfig.label}
+                        </span>
+                      );
+                    })()}
+                  </div>
                 </div>
 
                 <p className="text-gray-300 text-sm leading-relaxed">
@@ -182,30 +216,44 @@ const Projects = () => {
                   ))}
                 </div>
 
-                {/* Action Buttons */}
-                <div className="flex space-x-3 pt-2">
-                  <Button
-                    asChild
-                    variant="outline"
-                    size="sm"
-                    className="flex-1 border-purple-500/30 text-purple-400 hover:bg-purple-500/10"
-                  >
-                    <a href={project.demoUrl} target="_blank" rel="noopener noreferrer">
-                    <ExternalLink size={16} className="mr-2" />
-                    Voir le projet
-                    </a>
-                  </Button>
-                  <Button
-                    asChild
-                    variant="ghost"
-                    size="sm"
-                    className="text-gray-400 hover:text-white hover:bg-slate-700/50"
-                  >
-                    <a href={project.codeUrl} target="_blank" rel="noopener noreferrer">
-                    <Github size={16} />
-                    </a>
-                  </Button>
-                </div>
+                {/* Action Buttons - Only show for completed projects */}
+                {project.status === 'termine' && (
+                  <div className="flex space-x-3 pt-2">
+                    <Button
+                      asChild
+                      variant="outline"
+                      size="sm"
+                      className="flex-1 border-purple-500/30 text-purple-400 hover:bg-purple-500/10"
+                    >
+                      <a href={project.demoUrl} target="_blank" rel="noopener noreferrer">
+                      <ExternalLink size={16} className="mr-2" />
+                      Voir le projet
+                      </a>
+                    </Button>
+                    <Button
+                      asChild
+                      variant="ghost"
+                      size="sm"
+                      className="text-gray-400 hover:text-white hover:bg-slate-700/50"
+                    >
+                      <a href={project.codeUrl} target="_blank" rel="noopener noreferrer">
+                      <Github size={16} />
+                      </a>
+                    </Button>
+                  </div>
+                )}
+                
+                {/* Status message for non-completed projects */}
+                {project.status !== 'termine' && (
+                  <div className="pt-2">
+                    <p className="text-sm text-gray-400 italic">
+                      {project.status === 'en-cours' 
+                        ? '🚧 Projet en cours de développement...'
+                        : '📋 Projet en phase de planification'
+                      }
+                    </p>
+                  </div>
+                )}
               </div>
             </motion.div>
           ))}

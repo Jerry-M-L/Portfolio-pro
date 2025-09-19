@@ -7,7 +7,6 @@ const Skills = () => {
       title: 'Frontend',
       skills: [
         { name: 'React', level: 95, color: 'from-blue-400 to-blue-600' },
-        { name: 'Vue.js', level: 88, color: 'from-green-400 to-green-600' },
         { name: 'TypeScript', level: 90, color: 'from-blue-500 to-blue-700' },
         { name: 'Tailwind CSS', level: 92, color: 'from-cyan-400 to-cyan-600' }
       ]
@@ -18,7 +17,6 @@ const Skills = () => {
         { name: 'Node.js', level: 87, color: 'from-green-500 to-green-700' },
         { name: 'Python', level: 60, color: 'from-yellow-400 to-yellow-600' },
         { name: 'Php', level: 82, color: 'from-blue-600 to-blue-800' },
-        { name: 'MongoDB', level: 80, color: 'from-green-600 to-green-800' }
       ]
     },
     {
@@ -26,7 +24,6 @@ const Skills = () => {
       skills: [
         { name: 'Git', level: 75, color: 'from-orange-400 to-orange-600' },
         { name: 'Vercel', level: 70, color: 'from-yellow-500 to-orange-500' },
-        { name: 'CI/CD', level: 80, color: 'from-purple-400 to-purple-600' }
       ]
     }
   ];
@@ -108,7 +105,7 @@ const Skills = () => {
           <div className="flex flex-wrap justify-center gap-4">
             {[
               'Canva', 'Photoshop', 'Next.js', 'Express.js',  
-              'Cypress', 'Figma',  'Linux', 'Nginx'
+              'Cypress',   'Linux', 'Nginx'
             ].map((tech, index) => (
               <motion.span
                 key={tech}

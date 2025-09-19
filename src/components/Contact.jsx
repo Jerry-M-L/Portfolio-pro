@@ -27,7 +27,7 @@ const Contact = () => {
   const socialLinksMap = {
     GitHub: 'https://github.com/your-username',
     LinkedIn: 'https://www.linkedin.com/in/your-username',
-    Facebook: 'https://facebook.com/your-username'
+    Facebook: 'https://facebook.com/Jerry ML'
   };
 
   const contactInfo = [

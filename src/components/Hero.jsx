@@ -5,9 +5,9 @@ import { Button } from './ui/button';
 import profil from '../assets/profil.png';
 const Hero = () => {
   const socialLinks = {
-    GitHub: 'https://github.com/your-username',
+    GitHub: 'https://github.com/Jerry-M-L',
     LinkedIn: 'https://www.linkedin.com/in/your-username',
-    Email: 'mailto:your-email@example.com'
+    Email: 'jerrymbendaleca@gmail.com'
   };
   const scrollToAbout = () => {
     const element = document.getElementById('about');
