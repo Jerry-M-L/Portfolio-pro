@@ -13,7 +13,7 @@ const Projects = () => {
 
   const projects = [
     {
-      title: 'Portfolio Website',
+      title: 'Site Portfolio',
       description: 'Site portfolio responsive avec animations fluides et optimisation SEO pour un developpeur .',
       image: portfolioImg,
       demoUrl: 'https://portfolio-mlj.vercel.app/',
@@ -24,22 +24,22 @@ const Projects = () => {
     },
    
     {
-      title: 'E-Commerce Platform',
-      description: 'Plateforme e-commerce complète avec panier, paiements et gestion des commandes. Interface moderne et responsive.',
-      image: poste,
-      demoUrl: 'https://your-demo-url.example.com',
-      codeUrl: 'https://github.com/your-username/ecommerce-platform',
-      technologies: ['React', 'Node.js', 'PostgreSQL', 'Stripe'],
+      title: 'Marché de Crédits Carbone',
+      description: 'Plateforme de valorisation et d\'échange de crédits carbone avec suivi en temps réel des émissions et blockchain pour la traçabilité.',
+      image: 'https://media.istockphoto.com/id/2159480414/photo/businessman-holding-a-us-dollar-banknote-and-another-person-held-up-a-sign-with-the-co2-icon.jpg?s=612x612&w=0&k=20&c=aIyH79eE_wcJq2Zf-9aChwsiFT5lY8j-axSDFdRsERw=',
+      demoUrl: '/',
+      codeUrl: '/',
+      technologies: ['React', 'Node.js', 'Blockchain', 'Web3', 'PostgreSQL'],
       category: 'Full Stack',
       status: 'en-cours'
       
     },
     {
-      title: 'Task Management App',
+      title: 'Application de Gestion de Tâches',
       description: 'Application de gestion de tâches collaborative avec notifications en temps réel et tableaux Kanban.',
-      image: 'https://images.unsplash.com/photo-1556157382-97eda2d62296?q=80&w=1200&auto=format&fit=crop',
-      demoUrl: 'https://your-demo-url.example.com',
-      codeUrl: 'https://github.com/your-username/task-management-app',
+      image: 'https://images.unsplash.com/photo-1611224923853-80b023f02d71?q=80&w=1200&auto=format&fit=crop',
+      demoUrl: '#',
+      codeUrl: '#',
       technologies: ['Vue.js', 'Express', 'Socket.io', 'MongoDB'],
       category: 'Frontend',
       status: 'planification'
