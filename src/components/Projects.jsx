@@ -4,7 +4,7 @@ import { ExternalLink, Github, Eye, Clock, CheckCircle, AlertCircle } from 'luci
 import { Button } from './ui/button';
 import { useTranslation } from 'react-i18next';
 import portfolioImg from '../assets/portfolio.png';
-import poste from '../assets/poste.png';
+import CreditCarbone from '../assets/Credit carbone.png';
 
 const Projects = () => {
   const { t } = useTranslation();
@@ -28,7 +28,7 @@ const Projects = () => {
     {
       title: t('projects.items.carbonCredit.title'),
       description: t('projects.items.carbonCredit.description'),
-      image: 'https://media.istockphoto.com/id/2159480414/photo/businessman-holding-a-us-dollar-banknote-and-another-person-held-up-a-sign-with-the-co2-icon.jpg?s=612x612&w=0&k=20&c=aIyH79eE_wcJq2Zf-9aChwsiFT5lY8j-axSDFdRsERw=',
+      image: CreditCarbone,
       demoUrl: '/',
       codeUrl: '/',
       technologies: ['React', 'Node.js', 'Blockchain', 'Web3', 'PostgreSQL'],

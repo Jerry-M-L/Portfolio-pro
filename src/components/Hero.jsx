@@ -8,8 +8,8 @@ const Hero = () => {
   const { t } = useTranslation();
   const socialLinks = {
     GitHub: 'https://github.com/Jerry-M-L',
-    LinkedIn: 'https://www.linkedin.com/in/your-username',
-    Email: 'jerrymbendaleca@gmail.com'
+    LinkedIn: 'https://www.linkedin.com/in/jerry-mbenda-leca',
+    Email: 'mailto:jerrymbendaleca@gmail.com'
   };
   const scrollToAbout = () => {
     const element = document.getElementById('about');
