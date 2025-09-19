@@ -1,10 +1,12 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
 
 const Skills = () => {
+  const { t } = useTranslation();
   const skillCategories = [
     {
-      title: 'Frontend',
+      title: t('skills.categories.frontend'),
       skills: [
         { name: 'React', level: 95, color: 'from-blue-400 to-blue-600' },
         { name: 'TypeScript', level: 90, color: 'from-blue-500 to-blue-700' },
@@ -12,7 +14,7 @@ const Skills = () => {
       ]
     },
     {
-      title: 'Backend',
+      title: t('skills.categories.backend'),
       skills: [
         { name: 'Node.js', level: 87, color: 'from-green-500 to-green-700' },
         { name: 'Python', level: 60, color: 'from-yellow-400 to-yellow-600' },
@@ -20,7 +22,7 @@ const Skills = () => {
       ]
     },
     {
-      title: 'Outils & DevOps',
+      title: t('skills.categories.tools'),
       skills: [
         { name: 'Git', level: 75, color: 'from-orange-400 to-orange-600' },
         { name: 'Vercel', level: 70, color: 'from-yellow-500 to-orange-500' },
@@ -40,11 +42,11 @@ const Skills = () => {
         >
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
             <span className="bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
-              Mes Compétences
+              {t('skills.title')}
             </span>
           </h2>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-            Une expertise technique solide acquise au fil des années et des projets variés.
+            {t('skills.description')}
           </p>
         </motion.div>
 
@@ -101,7 +103,7 @@ const Skills = () => {
           viewport={{ once: true }}
           className="mt-16 text-center"
         >
-          <h3 className="text-2xl font-bold text-white mb-8">Autres Technologies</h3>
+          <h3 className="text-2xl font-bold text-white mb-8">{t('skills.otherTechnologies')}</h3>
           <div className="flex flex-wrap justify-center gap-4">
             {[
               'Canva', 'Photoshop', 'Next.js', 'Express.js',  

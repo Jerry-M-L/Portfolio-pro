@@ -2,8 +2,10 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Mail, Phone, MapPin, Send, Github, Linkedin, Twitter, Link, Facebook } from 'lucide-react';
 import { Button } from './ui/button';
+import { useTranslation } from 'react-i18next';
 
 const Contact = () => {
+  const { t } = useTranslation();
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -33,21 +35,21 @@ const Contact = () => {
   const contactInfo = [
     {
       icon: Mail,
-      title: 'Email',
-      value: 'jerrymbendaleca@gmail.com',
-      description: 'Envoyez-moi un email'
+      title: t('contact.info.email'),
+      value: t('contact.info.emailValue'),
+      description: t('contact.info.emailDesc')
     },
     {
       icon: Phone,
-      title: 'Téléphone',
-      value: '+236 74 02 16 72',
-      description: 'Appelez-moi directement'
+      title: t('contact.info.phone'),
+      value: t('contact.info.phoneValue'),
+      description: t('contact.info.phoneDesc')
     },
     {
       icon: MapPin,
-      title: 'Localisation',
-      value: 'Bangui, RCA',
-      description: 'Disponible pour rencontres'
+      title: t('contact.info.location'),
+      value: t('contact.info.locationValue'),
+      description: t('contact.info.locationDesc')
     }
   ];
 
@@ -75,11 +77,11 @@ const Contact = () => {
         >
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
             <span className="bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
-              Contactez-moi
+              {t('contact.title')}
             </span>
           </h2>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-            Vous avez un projet en tête ? Discutons ensemble de vos besoins et créons quelque chose d'extraordinaire.
+            {t('contact.description')}
           </p>
         </motion.div>
 
@@ -93,58 +95,58 @@ const Contact = () => {
             className="space-y-8"
           >
             <div className="bg-gradient-to-br from-slate-800/80 to-slate-700/80 backdrop-blur-sm border border-purple-500/20 rounded-2xl p-8">
-              <h3 className="text-2xl font-bold text-white mb-6">Envoyez-moi un message</h3>
+              <h3 className="text-2xl font-bold text-white mb-6">{t('contact.form.title')}</h3>
               
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid md:grid-cols-2 gap-6">
                   <div className="space-y-2">
-                    <label className="text-sm font-medium text-gray-300">Nom complet</label>
+                    <label className="text-sm font-medium text-gray-300">{t('contact.form.name')}</label>
                     <input
                       type="text"
                       name="name"
                       value={formData.name}
                       onChange={handleInputChange}
                       className="w-full px-4 py-3 bg-slate-700/50 border border-slate-600/50 rounded-lg text-white placeholder-gray-400 focus:border-purple-500/50 focus:outline-none focus:ring-2 focus:ring-purple-500/20 transition-all duration-300"
-                      placeholder="Votre nom"
+                      placeholder={t('contact.form.namePlaceholder')}
                       required
                     />
                   </div>
                   <div className="space-y-2">
-                    <label className="text-sm font-medium text-gray-300">Email</label>
+                    <label className="text-sm font-medium text-gray-300">{t('contact.form.email')}</label>
                     <input
                       type="email"
                       name="email"
                       value={formData.email}
                       onChange={handleInputChange}
                       className="w-full px-4 py-3 bg-slate-700/50 border border-slate-600/50 rounded-lg text-white placeholder-gray-400 focus:border-purple-500/50 focus:outline-none focus:ring-2 focus:ring-purple-500/20 transition-all duration-300"
-                      placeholder="votre@email.com"
+                      placeholder={t('contact.form.emailPlaceholder')}
                       required
                     />
                   </div>
                 </div>
 
                 <div className="space-y-2">
-                  <label className="text-sm font-medium text-gray-300">Sujet</label>
+                  <label className="text-sm font-medium text-gray-300">{t('contact.form.subject')}</label>
                   <input
                     type="text"
                     name="subject"
                     value={formData.subject}
                     onChange={handleInputChange}
                     className="w-full px-4 py-3 bg-slate-700/50 border border-slate-600/50 rounded-lg text-white placeholder-gray-400 focus:border-purple-500/50 focus:outline-none focus:ring-2 focus:ring-purple-500/20 transition-all duration-300"
-                    placeholder="Sujet de votre message"
+                    placeholder={t('contact.form.subjectPlaceholder')}
                     required
                   />
                 </div>
 
                 <div className="space-y-2">
-                  <label className="text-sm font-medium text-gray-300">Message</label>
+                  <label className="text-sm font-medium text-gray-300">{t('contact.form.message')}</label>
                   <textarea
                     name="message"
                     value={formData.message}
                     onChange={handleInputChange}
                     rows={6}
                     className="w-full px-4 py-3 bg-slate-700/50 border border-slate-600/50 rounded-lg text-white placeholder-gray-400 focus:border-purple-500/50 focus:outline-none focus:ring-2 focus:ring-purple-500/20 transition-all duration-300 resize-none"
-                    placeholder="Décrivez votre projet ou votre demande..."
+                    placeholder={t('contact.form.messagePlaceholder')}
                     required
                   />
                 </div>
@@ -154,7 +156,7 @@ const Contact = () => {
                   className="w-full bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white font-semibold py-3 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300"
                 >
                   <Send size={20} className="mr-2" />
-                  Envoyer le message
+                  {t('contact.form.submit')}
                 </Button>
               </form>
             </div>
@@ -199,7 +201,7 @@ const Contact = () => {
               viewport={{ once: true }}
               className="bg-gradient-to-br from-slate-800/80 to-slate-700/80 backdrop-blur-sm border border-purple-500/20 rounded-2xl p-8"
             >
-              <h3 className="text-2xl font-bold text-white mb-6">Suivez-moi</h3>
+              <h3 className="text-2xl font-bold text-white mb-6">{t('contact.social.title')}</h3>
               <div className="flex space-x-4">
                 {socialLinks.map((social) => {
                   const href = socialLinksMap[social.label];
@@ -219,7 +221,7 @@ const Contact = () => {
                 })}
               </div>
               <p className="text-gray-400 text-sm mt-4">
-                Connectons-nous sur les réseaux sociaux pour échanger sur nos projets et passions communes.
+                {t('contact.social.description')}
               </p>
             </motion.div>
 
@@ -233,10 +235,10 @@ const Contact = () => {
             >
               <div className="flex items-center space-x-3">
                 <div className="w-3 h-3 bg-green-400 rounded-full animate-pulse"></div>
-                <span className="text-green-400 font-semibold">Disponible pour nouveaux projets</span>
+                <span className="text-green-400 font-semibold">{t('contact.availability.title')}</span>
               </div>
               <p className="text-gray-300 text-sm mt-2">
-                Je suis actuellement disponible pour de nouveaux projets freelance ou collaborations.
+                {t('contact.availability.description')}
               </p>
             </motion.div>
           </motion.div>

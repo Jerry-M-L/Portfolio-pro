@@ -2,8 +2,10 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Heart, ArrowUp } from 'lucide-react';
 import { Button } from './ui/button';
+import { useTranslation } from 'react-i18next';
 
 const Footer = () => {
+  const { t } = useTranslation();
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
@@ -32,7 +34,7 @@ const Footer = () => {
             <span className='text-purple-500 font-serif italic'>MLJ</span><span className='text-white'>dev</span>
             </div>
             <p className="text-gray-400 leading-relaxed">
-              Développeur passionné créant des expériences web exceptionnelles avec les technologies les plus modernes.
+              {t('footer.brand')}
             </p>
           </motion.div>
 
@@ -44,14 +46,14 @@ const Footer = () => {
             viewport={{ once: true }}
             className="space-y-4"
           >
-            <span className="text-lg font-semibold text-white">Navigation</span>
+            <span className="text-lg font-semibold text-white">{t('footer.navigation')}</span>
             <div className="space-y-2">
               {[
-                { id: 'hero', label: 'Accueil' },
-                { id: 'about', label: 'À propos' },
-                { id: 'skills', label: 'Compétences' },
-                { id: 'projects', label: 'Projets' },
-                { id: 'contact', label: 'Contact' }
+                { id: 'hero', label: t('nav.home') },
+                { id: 'about', label: t('nav.about') },
+                { id: 'skills', label: t('nav.skills') },
+                { id: 'projects', label: t('nav.projects') },
+                { id: 'contact', label: t('nav.contact') }
               ].map((link) => (
                 <button
                   key={link.id}
@@ -77,7 +79,7 @@ const Footer = () => {
             viewport={{ once: true }}
             className="space-y-4"
           >
-            <span className="text-lg font-semibold text-white">Contact</span>
+            <span className="text-lg font-semibold text-white">{t('footer.contact')}</span>
             <div className="space-y-2 text-gray-400">
               <p>jerrymbendaleca@gmail.com</p>
               <p>+236 74 02 16 72</p>
@@ -107,7 +109,7 @@ const Footer = () => {
             className="text-gray-400 hover:text-white hover:bg-purple-500/10 transition-all duration-300"
           >
             <ArrowUp size={16} className="mr-2" />
-            Retour en haut
+            {t('footer.backToTop')}
           </Button>
         </motion.div>
       </div>

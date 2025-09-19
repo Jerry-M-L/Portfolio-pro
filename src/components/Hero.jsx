@@ -2,8 +2,10 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { ArrowDown, Github, Linkedin, Mail } from 'lucide-react';
 import { Button } from './ui/button';
+import { useTranslation } from 'react-i18next';
 import profil from '../assets/profil.png';
 const Hero = () => {
+  const { t } = useTranslation();
   const socialLinks = {
     GitHub: 'https://github.com/Jerry-M-L',
     LinkedIn: 'https://www.linkedin.com/in/your-username',
@@ -62,10 +64,10 @@ const Hero = () => {
             delay: 0.4
           }} className="text-2xl md:text-7xl font-bold">
               <span className="bg-gradient-to-r from-purple-400 via-pink-400 to-indigo-400 bg-clip-text text-transparent">
-                Développeur
+                {t('hero.title')}
               </span>
               <br />
-              <span className="text-white">Web</span>
+              <span className="text-white">{t('hero.subtitle')}</span>
             </motion.h1>
 
             <motion.p initial={{
@@ -77,8 +79,7 @@ const Hero = () => {
           }} transition={{
             delay: 0.6
           }} className="text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
-              Passionné par la création d'expériences web exceptionnelles avec des technologies modernes.
-              Je transforme vos idées en solutions digitales innovantes.
+              {t('hero.description')}
             </motion.p>
 
             {/* Social Links */}
@@ -125,7 +126,7 @@ const Hero = () => {
             delay: 1
           }}>
               <Button onClick={scrollToAbout} size="lg" className="bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white font-semibold px-8 py-4 rounded-full shadow-lg hover:shadow-xl transition-all duration-300">
-                Découvrir mon travail
+                {t('hero.cta')}
                 <ArrowDown className="ml-2 animate-bounce" size={20} />
               </Button>
             </motion.div>

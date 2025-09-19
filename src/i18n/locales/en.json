@@ -1,0 +1,121 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "skills": "Skills",
+    "projects": "Projects",
+    "contact": "Contact"
+  },
+  "hero": {
+    "title": "Web",
+    "subtitle": "Developer",
+    "description": "Passionate about creating exceptional web experiences with modern technologies. I transform your ideas into innovative digital solutions.",
+    "cta": "Discover my work"
+  },
+  "about": {
+    "title": "About me",
+    "description": "Passionate developer with expertise in full stack development",
+    "journey": "My journey",
+    "journeyText1": "Passionate about web development for several years, I have acquired solid experience in modern web technologies. My goal is to create functional applications and exceptional user experiences.",
+    "values": {
+      "title": "My values",
+      "cleanCode": "Clean and maintainable code",
+      "learning": "Continuous learning",
+      "collaboration": "Effective collaboration",
+      "innovation": "Innovation and creativity"
+    }
+  },
+  "skills": {
+    "title": "My Skills",
+    "description": "Solid technical expertise acquired over the years and various projects.",
+    "categories": {
+      "frontend": "Frontend",
+      "backend": "Backend",
+      "tools": "Tools & DevOps"
+    },
+    "otherTechnologies": "Other Technologies"
+  },
+  "projects": {
+    "title": "My Projects",
+    "description": "Discover a selection of my recent achievements, combining creativity and technical expertise.",
+    "categories": {
+      "all": "All",
+      "fullStack": "Full Stack",
+      "frontend": "Frontend",
+      "backend": "Backend"
+    },
+    "status": {
+      "completed": "Completed",
+      "inProgress": "In Progress",
+      "planning": "Planning"
+    },
+    "actions": {
+      "demo": "Demo",
+      "code": "Code",
+      "viewProject": "View Project"
+    },
+    "messages": {
+      "inProgress": "🚧 Project in development...",
+      "planning": "📋 Project in planning phase"
+    },
+    "items": {
+      "portfolio": {
+        "title": "Portfolio Website",
+        "description": "Responsive portfolio website with smooth animations and SEO optimization for a developer."
+      },
+      "carbonCredit": {
+        "title": "Carbon Credit Marketplace",
+        "description": "Carbon credit valuation and trading platform with real-time emission tracking and blockchain for traceability."
+      },
+      "taskManagement": {
+        "title": "Task Management App",
+        "description": "Collaborative task management application with real-time notifications and Kanban boards."
+      }
+    }
+  },
+  "contact": {
+    "title": "Contact me",
+    "description": "Have a project in mind? Let's discuss your needs together and create something extraordinary.",
+    "form": {
+      "title": "Send me a message",
+      "name": "Full name",
+      "namePlaceholder": "Your name",
+      "email": "Email",
+      "emailPlaceholder": "your@email.com",
+      "subject": "Subject",
+      "subjectPlaceholder": "Subject of your message",
+      "message": "Message",
+      "messagePlaceholder": "Describe your project or request...",
+      "submit": "Send message"
+    },
+    "info": {
+      "email": "Email",
+      "emailValue": "jerrymbendaleca@gmail.com",
+      "emailDesc": "Send me an email",
+      "phone": "Phone",
+      "phoneValue": "+236 74 02 16 72",
+      "phoneDesc": "Call me directly",
+      "location": "Location",
+      "locationValue": "Bangui, CAR",
+      "locationDesc": "Available for meetings"
+    },
+    "social": {
+      "title": "Follow me",
+      "description": "Let's connect on social networks to exchange about our projects and common passions."
+    },
+    "availability": {
+      "title": "Available for new projects",
+      "description": "I am currently available for new freelance projects or collaborations."
+    }
+  },
+  "footer": {
+    "brand": "Passionate developer creating exceptional web experiences with the most modern technologies.",
+    "navigation": "Navigation",
+    "contact": "Contact",
+    "backToTop": "Back to top",
+    "copyright": "© {{year}} Jerry MBENDA-LECA"
+  },
+  "language": {
+    "switch": "Switch language"
+  }
+}

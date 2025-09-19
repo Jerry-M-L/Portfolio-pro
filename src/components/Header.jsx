@@ -2,8 +2,11 @@ import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Menu, X } from 'lucide-react';
 import { Button } from './ui/button';
+import { useTranslation } from 'react-i18next';
+import LanguageSwitcher from './LanguageSwitcher';
 
 const Header = () => {
+  const { t } = useTranslation();
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
@@ -24,11 +27,11 @@ const Header = () => {
   };
 
   const navItems = [
-    { id: 'hero', label: 'Accueil' },
-    { id: 'about', label: 'À propos' },
-    { id: 'skills', label: 'Compétences' },
-    { id: 'projects', label: 'Projets' },
-    { id: 'contact', label: 'Contact' }
+    { id: 'hero', label: t('nav.home') },
+    { id: 'about', label: t('nav.about') },
+    { id: 'skills', label: t('nav.skills') },
+    { id: 'projects', label: t('nav.projects') },
+    { id: 'contact', label: t('nav.contact') }
   ];
 
   return (
@@ -64,6 +67,7 @@ const Header = () => {
                 {item.label}
               </motion.button>
             ))}
+            <LanguageSwitcher />
           </div>
 
           {/* Mobile Menu Button */}
@@ -94,6 +98,9 @@ const Header = () => {
                 {item.label}
               </button>
             ))}
+            <div className="px-4 py-2">
+              <LanguageSwitcher />
+            </div>
           </motion.div>
         )}
       </nav>

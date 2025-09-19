@@ -1,0 +1,121 @@
+{
+  "nav": {
+    "home": "Accueil",
+    "about": "À propos",
+    "skills": "Compétences",
+    "projects": "Projets",
+    "contact": "Contact"
+  },
+  "hero": {
+    "title": "Développeur",
+    "subtitle": "Web",
+    "description": "Passionné par la création d'expériences web exceptionnelles avec des technologies modernes. Je transforme vos idées en solutions digitales innovantes.",
+    "cta": "Découvrir mon travail"
+  },
+  "about": {
+    "title": "À propos de moi",
+    "description": "Développeur passionné avec une expertise en développement full stack",
+    "journey": "Mon parcours",
+    "journeyText1": "Passionné par le développement web depuis plusieurs années, j'ai acquis une solide expérience dans les technologies modernes du web. Mon objectif est de créer des applications opérantes et des expériences utilisateur exceptionnelles.",
+    "values": {
+      "title": "Mes valeurs",
+      "cleanCode": "Code propre et maintenable",
+      "learning": "Apprentissage continu",
+      "collaboration": "Collaboration efficace",
+      "innovation": "Innovation et créativité"
+    }
+  },
+  "skills": {
+    "title": "Mes Compétences",
+    "description": "Une expertise technique solide acquise au fil des années et des projets variés.",
+    "categories": {
+      "frontend": "Frontend",
+      "backend": "Backend",
+      "tools": "Outils & DevOps"
+    },
+    "otherTechnologies": "Autres Technologies"
+  },
+  "projects": {
+    "title": "Mes Projets",
+    "description": "Découvrez une sélection de mes réalisations récentes, alliant créativité et expertise technique.",
+    "categories": {
+      "all": "Tous",
+      "fullStack": "Full Stack",
+      "frontend": "Frontend",
+      "backend": "Backend"
+    },
+    "status": {
+      "completed": "Terminé",
+      "inProgress": "En cours",
+      "planning": "En planification"
+    },
+    "actions": {
+      "demo": "Demo",
+      "code": "Code",
+      "viewProject": "Voir le projet"
+    },
+    "messages": {
+      "inProgress": "🚧 Projet en cours de développement...",
+      "planning": "📋 Projet en phase de planification"
+    },
+    "items": {
+      "portfolio": {
+        "title": "Site Portfolio",
+        "description": "Site portfolio responsive avec animations fluides et optimisation SEO pour un développeur."
+      },
+      "carbonCredit": {
+        "title": "Marché de Crédits Carbone",
+        "description": "Plateforme de valorisation et d'échange de crédits carbone avec suivi en temps réel des émissions et blockchain pour la traçabilité."
+      },
+      "taskManagement": {
+        "title": "Application de Gestion de Tâches",
+        "description": "Application de gestion de tâches collaborative avec notifications en temps réel et tableaux Kanban."
+      }
+    }
+  },
+  "contact": {
+    "title": "Contactez-moi",
+    "description": "Vous avez un projet en tête ? Discutons ensemble de vos besoins et créons quelque chose d'extraordinaire.",
+    "form": {
+      "title": "Envoyez-moi un message",
+      "name": "Nom complet",
+      "namePlaceholder": "Votre nom",
+      "email": "Email",
+      "emailPlaceholder": "votre@email.com",
+      "subject": "Sujet",
+      "subjectPlaceholder": "Sujet de votre message",
+      "message": "Message",
+      "messagePlaceholder": "Décrivez votre projet ou votre demande...",
+      "submit": "Envoyer le message"
+    },
+    "info": {
+      "email": "Email",
+      "emailValue": "jerrymbendaleca@gmail.com",
+      "emailDesc": "Envoyez-moi un email",
+      "phone": "Téléphone",
+      "phoneValue": "+236 74 02 16 72",
+      "phoneDesc": "Appelez-moi directement",
+      "location": "Localisation",
+      "locationValue": "Bangui, RCA",
+      "locationDesc": "Disponible pour rencontres"
+    },
+    "social": {
+      "title": "Suivez-moi",
+      "description": "Connectons-nous sur les réseaux sociaux pour échanger sur nos projets et passions communes."
+    },
+    "availability": {
+      "title": "Disponible pour nouveaux projets",
+      "description": "Je suis actuellement disponible pour de nouveaux projets freelance ou collaborations."
+    }
+  },
+  "footer": {
+    "brand": "Développeur passionné créant des expériences web exceptionnelles avec les technologies les plus modernes.",
+    "navigation": "Navigation",
+    "contact": "Contact",
+    "backToTop": "Retour en haut",
+    "copyright": "© {{year}} Jerry MBENDA-LECA"
+  },
+  "language": {
+    "switch": "Changer de langue"
+  }
+}

@@ -2,10 +2,12 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { ExternalLink, Github, Eye, Clock, CheckCircle, AlertCircle } from 'lucide-react';
 import { Button } from './ui/button';
+import { useTranslation } from 'react-i18next';
 import portfolioImg from '../assets/portfolio.png';
 import poste from '../assets/poste.png';
 
 const Projects = () => {
+  const { t } = useTranslation();
   const handleProjectAction = (action, projectName, url) => {
     if (!url) return;
     window.open(url, '_blank', 'noopener,noreferrer');
@@ -13,8 +15,8 @@ const Projects = () => {
 
   const projects = [
     {
-      title: 'Site Portfolio',
-      description: 'Site portfolio responsive avec animations fluides et optimisation SEO pour un developpeur .',
+      title: t('projects.items.portfolio.title'),
+      description: t('projects.items.portfolio.description'),
       image: portfolioImg,
       demoUrl: 'https://portfolio-mlj.vercel.app/',
       codeUrl: 'https://github.com/Jerry-M-L/portfolio-mlj',
@@ -24,8 +26,8 @@ const Projects = () => {
     },
    
     {
-      title: 'Marché de Crédits Carbone',
-      description: 'Plateforme de valorisation et d\'échange de crédits carbone avec suivi en temps réel des émissions et blockchain pour la traçabilité.',
+      title: t('projects.items.carbonCredit.title'),
+      description: t('projects.items.carbonCredit.description'),
       image: 'https://media.istockphoto.com/id/2159480414/photo/businessman-holding-a-us-dollar-banknote-and-another-person-held-up-a-sign-with-the-co2-icon.jpg?s=612x612&w=0&k=20&c=aIyH79eE_wcJq2Zf-9aChwsiFT5lY8j-axSDFdRsERw=',
       demoUrl: '/',
       codeUrl: '/',
@@ -35,8 +37,8 @@ const Projects = () => {
       
     },
     {
-      title: 'Application de Gestion de Tâches',
-      description: 'Application de gestion de tâches collaborative avec notifications en temps réel et tableaux Kanban.',
+      title: t('projects.items.taskManagement.title'),
+      description: t('projects.items.taskManagement.description'),
       image: 'https://images.unsplash.com/photo-1611224923853-80b023f02d71?q=80&w=1200&auto=format&fit=crop',
       demoUrl: '#',
       codeUrl: '#',
@@ -52,21 +54,21 @@ const Projects = () => {
     switch (status) {
       case 'termine':
         return {
-          label: 'Terminé',
+          label: t('projects.status.completed'),
           icon: CheckCircle,
           className: 'bg-green-500/20 text-green-400 border-green-500/30',
           iconColor: 'text-green-400'
         };
       case 'en-cours':
         return {
-          label: 'En cours',
+          label: t('projects.status.inProgress'),
           icon: Clock,
           className: 'bg-yellow-500/20 text-yellow-400 border-yellow-500/30',
           iconColor: 'text-yellow-400'
         };
       case 'planification':
         return {
-          label: 'En planification',
+          label: t('projects.status.planning'),
           icon: AlertCircle,
           className: 'bg-blue-500/20 text-blue-400 border-blue-500/30',
           iconColor: 'text-blue-400'
@@ -81,10 +83,10 @@ const Projects = () => {
     }
   };
 
-  const categories = ['Tous', 'Full Stack', 'Frontend', 'Backend'];
-  const [activeCategory, setActiveCategory] = React.useState('Tous');
+  const categories = [t('projects.categories.all'), 'Full Stack', 'Frontend', 'Backend'];
+  const [activeCategory, setActiveCategory] = React.useState(t('projects.categories.all'));
 
-  const filteredProjects = activeCategory === 'Tous' 
+  const filteredProjects = activeCategory === t('projects.categories.all')
     ? projects 
     : projects.filter(project => project.category === activeCategory);
 
@@ -100,11 +102,11 @@ const Projects = () => {
         >
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
             <span className="bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
-              Mes Projets
+              {t('projects.title')}
             </span>
           </h2>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto mb-8">
-            Découvrez une sélection de mes réalisations récentes, alliant créativité et expertise technique.
+            {t('projects.description')}
           </p>
 
           {/* Category Filter */}
@@ -158,8 +160,8 @@ const Projects = () => {
                         className="bg-white/20 backdrop-blur-sm hover:bg-white/30 text-white border border-white/30"
                       >
                         <a href={project.demoUrl} target="_blank" rel="noopener noreferrer">
-                        <Eye size={16} className="mr-2" />
-                        Demo
+                      <Eye size={16} className="mr-2" />
+                      {t('projects.actions.demo')}
                         </a>
                       </Button>
                       <Button
@@ -168,8 +170,8 @@ const Projects = () => {
                         className="bg-white/20 backdrop-blur-sm hover:bg-white/30 text-white border border-white/30"
                       >
                         <a href={project.codeUrl} target="_blank" rel="noopener noreferrer">
-                        <Github size={16} className="mr-2" />
-                        Code
+                      <Github size={16} className="mr-2" />
+                      {t('projects.actions.code')}
                         </a>
                       </Button>
                     </div>
@@ -226,8 +228,8 @@ const Projects = () => {
                       className="flex-1 border-purple-500/30 text-purple-400 hover:bg-purple-500/10"
                     >
                       <a href={project.demoUrl} target="_blank" rel="noopener noreferrer">
-                      <ExternalLink size={16} className="mr-2" />
-                      Voir le projet
+                    <ExternalLink size={16} className="mr-2" />
+                    {t('projects.actions.viewProject')}
                       </a>
                     </Button>
                     <Button
@@ -248,8 +250,8 @@ const Projects = () => {
                   <div className="pt-2">
                     <p className="text-sm text-gray-400 italic">
                       {project.status === 'en-cours' 
-                        ? '🚧 Projet en cours de développement...'
-                        : '📋 Projet en phase de planification'
+                        ? t('projects.messages.inProgress')
+                        : t('projects.messages.planning')
                       }
                     </p>
                   </div>
